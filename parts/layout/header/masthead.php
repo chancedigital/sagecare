@@ -1,9 +1,6 @@
-<?php
-use Chancelight\Sagecare\Nav\Walker_Nav_Menu_Bem;
-use function Chancelight\Sagecare\Icons\get_svg;
-?>
+<?php use Chancelight\Sagecare\Nav\Walker_Nav_Menu_Bem; ?>
 
-<section class="masthead" id="js-masthead">
+<section tabindex="0" class="masthead" id="js-masthead">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			<div class="cell medium-2 masthead__col masthead__col--logo">
@@ -20,26 +17,9 @@ use function Chancelight\Sagecare\Icons\get_svg;
 					'walker'          => new Walker_Nav_Menu_Bem(),
 				] );
 				?>
-				<div class="masthead__button-group">
-					<button class="masthead__button masthead__button--search masthead__button--icon">
-						<?php
-						echo get_svg( [
-							'icon'  => 'search',
-							'title' => 'Search',
-						] );
-						?>
-					</button>
-					<button class="masthead__button masthead__button--translate">Translate</button>
-					<button class="masthead__button masthead__button--accessibility masthead__button--icon">
-						<?php
-						echo get_svg( [
-							'icon'  => 'accessibility',
-							'title' => 'Accessibility options',
-						] );
-						?>
-					</button>
-					<button class="masthead__button masthead__button--phone">Call 214.295.5374</button>
-				</div>
+
+				<?php get_template_part( 'parts/layout/header/masthead-buttons' ); ?>
+
 				<button id="js-topnav-toggle" class="masthead__hamburger">
 					<?php get_template_part( 'parts/components/hamburger' ); ?>
 				</button>

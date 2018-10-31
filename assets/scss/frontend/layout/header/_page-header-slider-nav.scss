@@ -1,0 +1,10 @@
+.page-header-slider-nav {
+	@include breakpoint( medium ) {
+		width: 40%;
+		background: $primary-color;
+	}
+
+	&__slide {
+
+	}
+}

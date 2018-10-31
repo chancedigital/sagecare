@@ -35,65 +35,6 @@
 		}
 	}
 
-	&__button-group {
-		display: inline-flex;
-	}
-
-	&__button {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: rem-calc( 36 );
-		margin: 0 rem-calc( 2 );
-		padding: 0 rem-calc( 8 );
-		border: 1px solid $gray-light;
-		background: $white;
-		color: $gray-600;
-		cursor: pointer;
-
-		&:hover,
-		&:focus {
-			border-color: $gray-500;
-			color: $black;
-
-			svg {
-				fill: $black;
-			}
-		}
-
-		&:last-child {
-			margin-right: 0;
-		}
-
-		&:first-child {
-			margin-left: 0;
-		}
-
-		&--icon {
-			width: rem-calc( 36 );
-			padding: rem-calc( 8 );
-		}
-
-		&--phone {
-			border-color: $primary-color;
-			background-color: $primary-color;
-			color: $white;
-
-			&:hover,
-			&:focus {
-				border-color: darken( $primary-color, 10% );
-				background-color: darken( $primary-color, 10% );
-				color: $white;
-			}
-		}
-
-		svg {
-			max-height: 100%;
-			transition: 0.25s fill ease-in;
-			fill: $gray-600;
-		}
-	}
-
 	&__col--nav {
 		@include breakpoint( medium ) {
 			display: flex;

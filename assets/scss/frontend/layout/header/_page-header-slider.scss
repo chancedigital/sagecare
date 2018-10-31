@@ -1,0 +1,47 @@
+.page-header-slider {
+	position: relative;
+
+	&__slide {
+		height: rem-calc( 155 );
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
+		@include breakpoint( medium ) {
+			height: rem-calc( 360 );
+		}
+
+		@include breakpoint( large ) {
+			height: rem-calc( 480 );
+		}
+	}
+
+	&__nav-wrapper {
+		@include breakpoint( medium ) {
+			position: absolute;
+			top: calc( 100% - #{rem-calc( 90 )} );
+			right: 0;
+			width: 40%;
+		}
+	}
+
+	&__nav {
+		padding: rem-calc( 15 );
+		background: $primary-color;
+		color: $white;
+		@include breakpoint( medium ) {
+			padding: rem-calc( 40 );
+			font-size: rem-calc( 18 );
+		}
+	}
+
+	&__nav-slide {
+		@include breakpoint( medium ) {
+			max-width: rem-calc( 430 );
+		}
+
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

@@ -61,7 +61,8 @@
 				}
 
 				#{$self}__item:hover &,
-				#{$self}__item:focus & {
+				#{$self}__item:focus &,
+				#{$self}__item:focus-within & {
 					margin-top: 0;
 					animation: 0.5s unstack ease-out;
 				}
@@ -99,7 +100,10 @@
 			width: rem-calc( 260 );
 			background: $white;
 			box-shadow: 0 rem-calc( 6 ) rem-calc( 16 ) rgba( $black, 0.125 );
+			z-index: 1;
+		}
 
+		@include breakpoint( medium only ) {
 			#{$self}__item:last-child & {
 				right: 0;
 				left: initial;
@@ -107,3 +111,5 @@
 		}
 	}
 }
+
+

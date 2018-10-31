@@ -2,8 +2,10 @@ export default () => {
 	const els = {
 		$masthead: $( '#js-masthead' ),
 		$topNav: $( '#js-topnav' ),
+		$pageHeader: $( '#js-page-header' ),
+		$wpAdminBar: $( '#wpadminbar' ),
 	};
-	const { $masthead, $topNav } = els;
+	const { $masthead, $topNav, $pageHeader } = els;
 	const mastheadHeight = $masthead.outerHeight();
 
 	// Sticky header class.
@@ -39,5 +41,10 @@ export default () => {
 				$( window ).scroll( { previousTop: 0 }, handleMasthead );
 			}
 		} );
+	}
+
+	// set margin to compensate for sticky header.
+	if ( $pageHeader ) {
+		$pageHeader.css( 'margin-top', `${Math.floor( mastheadHeight )}px` );
 	}
 };

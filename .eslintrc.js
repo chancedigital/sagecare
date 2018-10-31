@@ -203,7 +203,7 @@ const config = {
 		/**
 		 * Enforce operators to be placed before or after line breaks.
 		 */
-		'operator-linebreak': [ 'error', 'after' ],
+		'operator-linebreak': 'off',
 
 		/**
 		 * Require or disallow use of semicolons instead of ASI.
