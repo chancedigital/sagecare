@@ -1,0 +1,23 @@
+@mixin global-nav-menu {
+
+	&__menu {
+		display: flex;
+		position: relative;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__item {
+
+		[ data-whatinput="mouse" ] & {
+			outline: none;
+		}
+	}
+
+	&__link {
+		margin-bottom: 0;
+	}
+}

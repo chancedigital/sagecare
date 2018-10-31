@@ -1,0 +1,37 @@
+options:
+  merge-default-rules: false
+files:
+  ignore:
+    - 'dist/**/*'
+    - 'src/styles/vendor/**/*'
+rules:
+  attribute-quotes: 1
+  brace-style: 1
+  empty-line-between-blocks: 1
+  indentation:
+    - 2
+    - size: tab
+  no-ids: 2
+  no-important: 2
+  no-invalid-hex: 2
+  no-url-protocols: 2
+  no-vendor-prefixes: 2
+  one-declaration-per-line: 1
+  quotes:
+    - 2
+    - style: double
+  property-sort-order:
+    - 1
+    - order: smacss
+  single-line-per-selector: 1
+  space-before-brace: 2
+  space-between-parens:
+    - 1
+    - include: true
+  space-after-colon: 2
+  space-after-comma: 2
+  space-around-operator: 2
+  space-before-colon:
+    - 1
+    - include: false
+  trailing-semicolon: 2

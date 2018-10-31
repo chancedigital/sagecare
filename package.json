@@ -1,0 +1,97 @@
+{
+  "name": "sagecare",
+  "version": "2.0.0",
+  "description": "Project Description",
+  "homepage": "https://project-domain.tld",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chancedigital/sagecare"
+  },
+  "author": {
+    "name": "Chance Strickland",
+    "email": "hi@chancedigital.io",
+    "url": "https://chancedigital.io",
+    "role": "developer"
+  },
+  "scripts": {
+    "start": "yarn && composer install && gulp --gulpfile build/gulpfile.babel.js",
+    "watch": "gulp --gulpfile build/gulpfile.babel.js watch",
+    "build": "gulp --gulpfile build/gulpfile.babel.js",
+    "dev": "yarn && composer install && gulp --gulpfile build/gulpfile.babel.js",
+    "deploy": "yarn && composer install --no-dev -o && gulp --gulpfile build/gulpfile.babel.js",
+    "lint-js": "eslint assets/js",
+    "format-js": "eslint --fix assets/js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "eslintIgnore": [
+    "assets/js/_vendor",
+    "assets/js/admin/_vendor",
+    "assets/js/frontend/_vendor",
+    "assets/js/shared/_vendor"
+  ],
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-inline-json-import": "^0.3.1",
+    "browserslist": "^4.3.4",
+    "caniuse-db": "^1.0.30000902",
+    "dateformat": "^3.0.3",
+    "del": "^3.0.0",
+    "eslint": "^5.8.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "gulp": "^4.0.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-filter": "^5.1.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-livereload": "^4.0.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-zip": "^4.2.0",
+    "husky": "^1.1.2",
+    "lint-staged": "^8.0.3",
+    "node-sass-tilde-importer": "^1.0.2",
+    "postcss-import": "^12.0.0",
+    "postcss-preset-env": "^6.3.0",
+    "prettier": "git+https://github.com/Automattic/wp-prettier.git#wp-prettier-1.14.0",
+    "pump": "^3.0.0",
+    "require-dir": "^1.1.0",
+    "sass-lint": "^1.12.1",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-stream": "^5.1.1"
+  },
+  "dependencies": {
+    "foundation-sites": "6.4.3",
+    "jquery": "^3.3.1",
+    "motion-ui": "^2.0.3",
+    "slick-carousel": "^1.8.1",
+    "what-input": "^5.1.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "Explorer 11",
+    "last 1 version"
+  ],
+  "engineStrict": true,
+  "engines": {
+    "node": "~8.12"
+  }
+}

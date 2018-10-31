@@ -1,0 +1,6 @@
+{
+  "publicPath": "/wp-content/themes/sagecare",
+  "devUrl": "http://sagecare.local",
+  "proxyUrl": "http://localhost:3000",
+  "cacheBusting": "[name]_[hash:8]"
+}

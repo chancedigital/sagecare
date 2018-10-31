@@ -1,0 +1,8 @@
+body {
+	font-family: $font-family-sans;
+}
+
+// suppress focus ring on for mouse users
+[ data-whatintent="mouse" ] *:focus {
+	outline: none;
+}

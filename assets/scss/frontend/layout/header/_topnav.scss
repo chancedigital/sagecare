@@ -1,0 +1,109 @@
+.topnav {
+	@include global-nav-menu;
+	$self: &;
+
+	&__menu {
+		justify-content: flex-end;
+	}
+
+	&__item {
+		position: relative;
+		font-size: rem-calc( 14 );
+		font-weight: $font-weight-bold;
+		text-transform: uppercase;
+
+		@include breakpoint( medium ) {
+			margin-right: rem-calc( 40 );
+
+			&:last-child {
+				margin-right: rem-calc( 20 );
+			}
+		}
+
+		&--l2 {
+			font-weight: $font-weight-regular;
+			text-transform: none;
+
+			@include breakpoint( medium ) {
+				position: relative;
+				width: 100%;
+				margin-top: -100%;
+				padding: rem-calc( 6 ) rem-calc( 10 );
+				font-size: rem-calc( 15 );
+				overflow: hidden;
+
+				&:before {
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					transform: scaleX( 0 );
+					transform-origin: left;
+					transition: 0.25s transform ease-in;
+					background: $gray-100;
+					content: "";
+				}
+
+				&:hover {
+					&:before {
+						transform: scaleX( 1 );
+					}
+
+					a {
+						color: darken( $primary-color, 10% );
+					}
+				}
+
+				#{$self}__item.animate-ready & {
+					animation: 0.5s stack ease-in;
+				}
+
+				#{$self}__item:hover &,
+				#{$self}__item:focus & {
+					margin-top: 0;
+					animation: 0.5s unstack ease-out;
+				}
+
+				a {
+					display: inline-block;
+					position: relative;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	&__link {
+		color: $black;
+
+		&:hover,
+		&:focus,
+		#{$self}__item:hover > & {
+			color: $primary-color;
+		}
+	}
+
+	&__submenu {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		overflow: hidden;
+
+		@include breakpoint( medium ) {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: rem-calc( 260 );
+			background: $white;
+			box-shadow: 0 rem-calc( 6 ) rem-calc( 16 ) rgba( $black, 0.125 );
+
+			#{$self}__item:last-child & {
+				right: 0;
+				left: initial;
+			}
+		}
+	}
+}
