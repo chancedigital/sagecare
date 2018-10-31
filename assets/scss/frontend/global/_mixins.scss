@@ -1,5 +1,4 @@
 @mixin global-nav-menu {
-
 	&__menu {
 		display: flex;
 		position: relative;
@@ -11,13 +10,31 @@
 	}
 
 	&__item {
-
-		[ data-whatinput="mouse" ] & {
+		[data-whatinput='mouse'] & {
 			outline: none;
 		}
 	}
 
 	&__link {
 		margin-bottom: 0;
+	}
+}
+
+@mixin heading( $lvl: h1 h2 h3 h4 h5 h6 ) {
+	$list-to-check: h1 h2 h3 h4 h5 h6;
+	@if type-of( $lvl ) == string and contains( $list-to-check, $lvl ) {
+		#{$lvl},
+		.#{$lvl} {
+			@content;
+		}
+	} @else if type-of( $lvl ) == list {
+		@each $hd in $lvl {
+			@if contains( $list-to-check, $hd ) {
+				#{$hd},
+				.#{$hd} {
+					@content;
+				}
+			}
+		}
 	}
 }

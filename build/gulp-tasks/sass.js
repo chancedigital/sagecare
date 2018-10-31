@@ -3,6 +3,7 @@ import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import postcss from 'gulp-postcss';
 import pump from 'pump';
+import path from 'path';
 import notify from 'gulp-notify';
 import tildeImporter from 'node-sass-tilde-importer';
 import { assets, dist, successMessage } from '../gulp.settings.babel';
@@ -26,6 +27,10 @@ gulp.task( 'sass', cb => {
 		postcss( [
 			require( 'postcss-import' ),
 			require( 'postcss-preset-env' )( { stage: 0 } ),
+			require( 'postcss-svg' )( {
+				dirs: [ assets ],
+			} ),
+			require( 'postcss-svgo' ),
 		] ),
 		gulp.dest( `${dist}/css` ),
 		sourcemaps.write( './', {

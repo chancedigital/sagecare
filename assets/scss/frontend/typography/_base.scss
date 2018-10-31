@@ -1,0 +1,12 @@
+blockquote,
+blockquote p {
+	line-height: 1.4;
+
+	@include breakpoint( medium ) {
+		font-size: rem-calc( 26 );
+	}
+
+	@include breakpoint( large ) {
+		font-size: rem-calc( 32 );
+	}
+}

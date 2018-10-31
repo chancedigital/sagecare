@@ -1,0 +1,41 @@
+.button {
+	font-weight: $font-weight-bold;
+
+	&:hover,
+	&:focus {
+		padding-right: 1.25em;
+		padding-left: 1.25em;
+	}
+
+	&.secondary.hollow {
+		border-color: $blue-brightest;
+	}
+
+	&.arrow {
+		position: relative;
+		padding-right: calc( 1em + #{rem-calc( 16 )} );
+		fill: #000;
+
+		&:hover,
+		&:focus {
+			padding-right: calc( 1.25em + #{rem-calc( 16 )} );
+		}
+
+		&:after {
+			display: inline-block;
+			position: absolute;
+			top: 50%;
+			right: rem-calc( 8 );
+			width: rem-calc( 16 );
+			height: rem-calc( 16 );
+			transform: translateY( -50% );
+			background: {
+				position: center;
+				size: contain;
+				repeat: no-repeat;
+				image: url( "img/svg-icons.svg#icon-angle-right" param( --color $secondary-color ) );
+			};
+			content: "";
+		}
+	}
+}

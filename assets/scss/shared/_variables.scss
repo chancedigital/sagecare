@@ -13,6 +13,10 @@ $black: #4a4a4a;
 $black-dark: darken( $black, 10% );
 $white: #fff;
 
+$blue: map-get( $foundation-palette, secondary );
+$blue-brighter: map-get( $foundation-palette, success );
+$blue-brightest: map-get( $foundation-palette, warning );
+
 $gray-100: lighten( $black, 66% );
 $gray-200: lighten( $black, 59% );
 $gray-300: lighten( $black, 52% );
@@ -34,3 +38,97 @@ $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
+
+/// Foundation variables
+$header-font-family: $font-family-sans;
+$font-family-monospace: $font-family-mono;
+$header-lineheight: 1.4;
+$header-margin-bottom: 0.5rem;
+$header-font-weight: $font-weight-light;
+$blockquote-border: 0;
+$blockquote-color: map-get( $foundation-palette, success );
+$blockquote-padding: rem-calc( 9 0 0 );
+
+$header-styles: (
+	"small": (
+		"h1": (
+			"fs": 24,
+			"lh": 1.2,
+			"mt": 0,
+			"mb": $header-margin-bottom,
+		),
+		"h2": (
+			"fs": 20,
+			"lh": $header-lineheight,
+			"mt": 0,
+			"mb": $header-margin-bottom,
+		),
+		"h3": (
+			"fs": 19,
+			"lh": $header-lineheight,
+			"mt": 0,
+			"mb": $header-margin-bottom,
+		),
+		"h4": (
+			"fs": 16,
+			"lh": $header-lineheight,
+			"mt": 0,
+			"mb": $header-margin-bottom,
+		),
+		"h5": (
+			"fs": 16,
+			"lh": $header-lineheight,
+			"mt": 0,
+			"mb": $header-margin-bottom,
+		),
+		"h6": (
+			"fs": 15,
+			"lh": $header-lineheight,
+			"mt": 0,
+			"mb": $header-margin-bottom,
+		),
+	),
+	"medium": (
+		"h1": (
+			"fs": 48,
+			"lh": 1.2,
+			"mt": 0,
+			"mb": $header-margin-bottom,
+		),
+		"h2": (
+			"fs": 40,
+			"lh": $header-lineheight,
+			"mt": 0,
+			"mb": $header-margin-bottom,
+		),
+		"h3": (
+			"fs": 31,
+			"lh": $header-lineheight,
+			"mt": 0,
+			"mb": $header-margin-bottom,
+		),
+		"h4": (
+			"fs": 17,
+			"lh": $header-lineheight,
+			"mt": 0,
+			"mb": $header-margin-bottom,
+		),
+		"h5": (
+			"fs": 17,
+			"lh": $header-lineheight,
+			"mt": 0,
+			"mb": $header-margin-bottom,
+		),
+		"h6": (
+			"fs": 15,
+			"lh": $header-lineheight,
+			"mt": 0,
+			"mb": $header-margin-bottom,
+		),
+	),
+	"large": (
+		"h1": (
+			"fs": 64,
+		),
+	),
+);

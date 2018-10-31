@@ -1,0 +1,36 @@
+@include heading( h1 h2 h3 h4 h5 h6 ) {
+	&.underline {
+		padding-bottom: 0.25em;
+		border-bottom: rem-calc( 2 ) solid currentColor;
+
+		+ h1,
+		+ .h1,
+		+ h2,
+		+ .h2,
+		+ h3,
+		+ .h3,
+		+ h4,
+		+ .h4,
+		+ h5,
+		+ .h5,
+		+ .h6,
+		+ .h6 {
+			margin-top: 1rem;
+
+			@include breakpoint( medium ) {
+				margin-top: 2rem;
+			}
+		}
+	}
+}
+
+h1,
+.h1 {
+	color: $secondary-color;
+}
+
+h4,
+.h4 {
+	color: $primary-color;
+	font-weight: $font-weight-bold;
+}

@@ -11,26 +11,20 @@ get_header();
 <div class="grid-container">
 	<div class="grid-x grid-padding-x">
 
-		<div class="medium-7 large-8 cell">
+		<div class="medium-7 cell">
 
-			<main id="main" class="page-index__sidebar">
-				<?php
-				if ( have_posts() ) :
-					while ( have_posts() ) :
-						the_post();
-						get_template_part( 'parts/content', 'page' );
-					endwhile;
-				endif;
-				?>
+			<main id="main" class="page-front__main">
+				<article class="page-front__primary-content">
+					<?php
+					if ( have_posts() ) :
+						while ( have_posts() ) :
+							the_post();
+							get_template_part( 'parts/templates/page', 'content' );
+						endwhile;
+					endif;
+					?>
+				</article>
 			</main>
-
-		</div><!-- .cell -->
-
-		<div class="medium-5 large-4 cell">
-
-			<aside id="sidebar" class="page-index__sidebar">
-				<?php get_sidebar(); ?>
-			</aside>
 
 		</div><!-- .cell -->
 
