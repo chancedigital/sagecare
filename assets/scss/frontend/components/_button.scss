@@ -1,3 +1,14 @@
+@mixin add-button-arrow( $color: $secondary-color ) {
+	&:after {
+		background: {
+			position: center;
+			size: contain;
+			repeat: no-repeat;
+			image: url( "img/svg-icons.svg#icon-angle-right" param( --color $color ) );
+		}
+	}
+}
+
 .button {
 	font-weight: $font-weight-bold;
 
@@ -7,11 +18,34 @@
 		padding-left: 1.25em;
 	}
 
+	&.white {
+		border-color: #fff;
+		background-color: #fff;
+		color: $black;
+	}
+
+	&.white.hollow {
+		border-color: $blue-brightest;
+		background-color: transparent;
+		color: $white;
+
+		&:hover,
+		&:focus {
+			border-color: $white;
+		}
+
+		&.arrow {
+			@include add-button-arrow( $white );
+			fill: $white;
+		}
+	}
+
 	&.secondary.hollow {
 		border-color: $blue-brightest;
 	}
 
 	&.arrow {
+		@include add-button-arrow;
 		position: relative;
 		padding-right: calc( 1em + #{rem-calc( 16 )} );
 		fill: #000;
@@ -29,12 +63,6 @@
 			width: rem-calc( 16 );
 			height: rem-calc( 16 );
 			transform: translateY( -50% );
-			background: {
-				position: center;
-				size: contain;
-				repeat: no-repeat;
-				image: url( "img/svg-icons.svg#icon-angle-right" param( --color $secondary-color ) );
-			};
 			content: "";
 		}
 	}

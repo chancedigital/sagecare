@@ -1,0 +1,15 @@
+.section {
+
+	&--blue {
+		background: $blue;
+		color: $white;
+
+		@include heading( h1 h2 h3 ) {
+			color: $blue-brightest;
+		}
+
+		@include heading( h4 h5 h6 ) {
+			color: $white;
+		}
+	}
+}

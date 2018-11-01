@@ -46,7 +46,9 @@
 					content: "";
 				}
 
-				&:hover {
+				&:hover,
+				&:focus,
+				&:focus-within {
 					&:before {
 						transform: scaleX( 1 );
 					}

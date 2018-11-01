@@ -1,12 +1,7 @@
-.page-front {
-
-	&__primary-content {
-		padding-top: rem-calc( 30 );
-		padding-bottom: rem-calc( 30 );
-
-		@include breakpoint( medium ) {
-			padding-top: rem-calc( 60 );
-			padding-bottom: rem-calc( 60 );
-		}
-	}
+.front-page {
 }
+
+@import "front-page/primary-content";
+@import "front-page/services";
+@import "front-page/column-section";
+@import "front-page/success-stories";

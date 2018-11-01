@@ -93,7 +93,7 @@ $header-styles: (
 			"fs": 48,
 			"lh": 1.2,
 			"mt": 0,
-			"mb": $header-margin-bottom,
+			"mb": $header-margin-bottom * 1.5,
 		),
 		"h2": (
 			"fs": 40,
@@ -129,6 +129,7 @@ $header-styles: (
 	"large": (
 		"h1": (
 			"fs": 64,
+			"mb": $header-margin-bottom * 3,
 		),
 	),
 );

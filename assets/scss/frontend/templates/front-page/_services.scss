@@ -1,0 +1,72 @@
+.front-page-services {
+	@include breakpoint( medium ) {
+		display: flex;
+		flex-flow: row wrap;
+
+		> * {
+			width: 50%;
+		}
+	}
+
+	&__service {
+		position: relative;
+		margin: 1rem 0;
+		padding-right: rem-calc( 15 );
+		padding-left: rem-calc( 100 );
+
+		@include breakpoint( medium ) {
+			max-width: rem-calc( 630 );
+			margin: 2rem 0;
+			padding-left: rem-calc( 64 );
+		}
+
+		@include breakpoint( large ) {
+			max-width: rem-calc( 614 );
+			margin: 4rem 0;
+			padding-right: rem-calc( 30 );
+			padding-left: rem-calc( 96 );
+		}
+	}
+
+	&__service-icon {
+		display: flex;
+		position: absolute;
+		top: 0;
+		left: rem-calc( 15 );
+		align-items: center;
+		justify-content: center;
+		width: rem-calc( 72 );
+		height: rem-calc( 72 );
+		border-radius: 999px;
+		background: $primary-color;
+		fill: $white;
+
+		svg,
+		img {
+			max-width: 60%;
+			height: auto;
+			max-height: 60%;
+		}
+
+		@include breakpoint( medium ) {
+			top: 50%;
+			left: rem-calc( -36 );
+			transform: translateY( -50% );
+		}
+
+		@include breakpoint( large ) {
+			left: rem-calc( -49 );
+			width: rem-calc( 98 );
+			height: rem-calc( 98 );
+		}
+	}
+
+	&__img {
+		background-position: center;
+		background-size: cover;
+
+		@include breakpoint( small only ) {
+			height: rem-calc( 200 );
+		}
+	}
+}
